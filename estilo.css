@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #F9F8F3;
+    color: #2D312E;
+}
+
+.hero-pattern {
+    background: linear-gradient(rgba(7, 61, 16, 0.8), rgba(11, 90, 24, 0.75)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #EBE6DC;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0B5A18;
+    border-radius: 4px;
+}
+
+/* Transición suave para toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optimización para animaciones con aceleración gráfica */
+section, .product-card, button {
+    will-change: transform, opacity;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-animate {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animación con retraso para las métricas de abajo */
+.hero-metrics-animate {
+    opacity: 0;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+/* Animación de flotación suave y continua */
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Animación de brillo o pulso para los números */
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(244, 122, 19, 0.4);
+    }
+    50% {
+        opacity: 0.85;
+        text-shadow: 0 0 20px rgba(244, 122, 19, 0.8);
+    }
+}
+
+.animate-float {
+    animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ===============================================
+   ANIMACIONES DIVERTIDAS Y DINÁMICAS (POETRA)
+   =============================================== */
+
+/* 1. Rebote divertido para el botón flotante del Carrito */
+@keyframes cartBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.08); }
+}
+
+.cart-float-btn {
+    animation: cartBounce 2s infinite ease-in-out;
+}
+
+/* 2. Icono de carrito caminando dentro del botón */
+@keyframes cartWiggle {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(-3px) rotate(-8deg); }
+    75% { transform: translateX(3px) rotate(8deg); }
+}
+
+.cart-icon-wiggle {
+    display: inline-block;
+    animation: cartWiggle 1.2s infinite ease-in-out;
+}
+
+/* 3. Animación de Giro 360° cuando agregas algo al carrito */
+@keyframes spinCart {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.4); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.cart-pop-animation {
+    animation: spinCart 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 4. Efecto de flotación suave para etiquetas y badges */
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+.badge-floating {
+    display: inline-block;
+    animation: floatBadge 2.5s infinite ease-in-out;
+}
+
+/* 5. Efecto de pulso / latido para botones al hacer hover */
+.btn-fun-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px -5px rgba(224, 112, 32, 0.4);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/* ===============================================
+   ANIMACIONES CONTINUAS Y VIVAS (POETRA)
+   =============================================== */
+
+/* Suavizar scroll general */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 1. Botón flotante del carrito rebotando sin parar en bucle */
+@keyframes continuousBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 10px 25px -5px rgba(45, 49, 46, 0.3);
+    }
+    50% {
+        transform: translateY(-12px) scale(1.05);
+        box-shadow: 0 20px 30px -5px rgba(224, 112, 32, 0.4);
+    }
+}
+
+.cart-float-btn {
+    animation: continuousBounce 2s infinite ease-in-out !important;
+}
+
+/* 2. Tarjetas de productos flotando sutilmente de forma automática */
+@keyframes cardFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Aplicamos una animación escalonada para que no floten todas al mismo tiempo exacto */
+.product-card-float:nth-child(odd) {
+    animation: cardFloat 4s infinite ease-in-out;
+}
+
+.product-card-float:nth-child(even) {
+    animation: cardFloat 5s infinite ease-in-out 1s;
+}
+
+/* 3. Animación de latido constante para los botones de compra */
+@keyframes pulseButton {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+.btn-pulsing {
+    animation: pulseButton 2.5s infinite ease-in-out;
+}
+
+/* Centrado absoluto del escenario 3D */
+.circular-carousel {
+    position: relative;
+    width: 100%;
+    height: 550px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+#poetra-3d-ring {
+    position: relative;
+    width: 0;
+    height: 0;
+    transform-style: preserve-3d;
+}
+
+.preserve-3d {
+    transform-style: preserve-3d;
+    perspective: 1600px;
+}
+
+/* ===============================================
+   ESTILOS NATIVOS DEPTH CAROUSEL (POETRA)
+   =============================================== */
+.depth-product-card {
+    position: absolute;
+    width: 280px;
+    height: 380px;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease, filter 0.6s ease;
+    transform-style: preserve-3d;
+    will-change: transform, opacity, filter;
+    border-radius: 18px;
+}
+
+
+
+/* ===============================================
+   ANIMACIÓN DE SCROLL VISIBLE Y NOTABLE (POETRA)
+   =============================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estado inicial: desplazado 80px hacia abajo y transparente */
+.reveal-on-scroll {
+    opacity: 0 !important;
+    transform: translateY(80px) scale(0.95) !important;
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: opacity, transform;
+}
+
+/* Estado cuando se activa al bajar */
+.reveal-on-scroll.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+
+/* Animaciones Personalizadas Carrito POETRA */
+@keyframes poetraCartPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+@keyframes poetraBadgeBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.cart-btn-animated {
+    animation: poetraCartPulse 3s infinite ease-in-out;
+}
+
+.cart-btn-animated:hover {
+    transform: scale(1.15) rotate(-8deg) !important;
+    box-shadow: 0 0 20px rgba(243, 112, 33, 0.7) !important;
+}
+
+.cart-badge-animated {
+    animation: poetraBadgeBounce 1.8s infinite ease-in-out;
+}
+
+/* Animación de destello de luz constante solo para el texto */
+@keyframes textShimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer-text {
+    background: linear-gradient(
+        90deg, 
+        #F47A13 0%, 
+        #FFFFFF 50%, 
+        #F47A13 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textShimmer 3.5s linear infinite;
+}
+
+.shimmer-text-white {
+    background: linear-gradient(
+        90deg, 
+        #FFFFFF 0%, 
+        #f79a4d 50%, 
+        #FFFFFF 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textShimmer 3.5s linear infinite;
+}
+
+
+
+/* Ocultar el cursor por defecto en computadores de escritorio */
+@media (pointer: fine) {
+    body {
+        cursor: none;
+    }
+    
+    a, button, select, input, textarea, [onclick] {
+        cursor: none !important;
+    }
+}
+
+/* El punto del cursor ahora es la flor Ojo de Poeta (*Thunbergia alata*) */
+.custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #1a1a1a; /* El centro negro característico de la flor */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    transition: width 0.2s, height 0.2s;
+}
+/* Contenedor exacto del puntero */
+.custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, transform 0.2s ease;
+}
+
+/* Imagen de la flor con recorte limpio y sombra orgánica en sus bordes */
+.cursor-flower-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: transparent !important;
+    border: none !important;
+    filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.35));
+}
+
+/* Efecto sutil al pasar sobre elementos interactivos */
+body.cursor-hover .custom-cursor-dot {
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+
+/* Anillo exterior con seguimiento fluido */
+.custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(11, 90, 24, 0.6); /* Verde POETRA con transparencia */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out, width 0.25s ease-out, height 0.25s ease-out, border-color 0.25s, background-color 0.25s;
+    backdrop-filter: blur(1px);
+}
+
+/* Estado al pasar sobre botones o elementos interactivos (Hover Effect) */
+body.cursor-hover .custom-cursor-ring {
+    width: 55px;
+    height: 55px;
+    background-color: rgba(244, 122, 19, 0.15); /* Fondo naranja sutil */
+    border-color: #F47A13;
+}
+
+body.cursor-hover .custom-cursor-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #0B5A18; /* Verde POETRA */
+}
+
+/* Estela de hojas finas, pequeñas y con detalle botánico ultra realista */
+.cursor-leaf-trail {
+    position: fixed;
+    width: 10px;    /* Mucho más pequeña y discreta */
+    height: 16px;   /* Proporción alargada de hoja real */
+    background: linear-gradient(135deg, #188038 0%, #0B5A18 100%);
+    /* Curvatura orgánica fina de hoja de flor */
+    border-radius: 0% 100% 50% 50%;
+    pointer-events: none;
+    z-index: 9997;
+    opacity: 0.85;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* Nervadura central súper fina y elegante */
+.cursor-leaf-trail::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    height: 60%;
+    border-left: 1.5px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50% 0 0 50%;
+    transform: rotate(-20deg);
+}
+
+/* Hace que el fondo blanco de la imagen del cursor desaparezca */
+.custom-cursor-dot img {
+    mix-blend-mode: multiply;
+}
+
+
+/* Contenedor en cuadrícula para Misión y Visión */
+.poetra-mision-vision-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Tarjetas individuales con diseño depurado y elegancia de autor */
+.mv-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(11, 90, 24, 0.12);
+    border-radius: 14px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.35s cubic-bezier(0.1, 1, 0.1, 1);
+}
+
+/* Barra lateral decorativa con el degradado institucional */
+.mv-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #0B5A18, #F47A13);
+}
+
+/* Efecto hover suave al pasar el mouse */
+.mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(11, 90, 24, 0.08);
+    border-color: #F47A13;
+}
+
+/* Icono decorativo superior */
+.mv-icon {
+    font-size: 1.25rem;
+    margin-bottom: 0.6rem;
+}
+
+/* Títulos con tipografía elegante */
+.mv-card h3 {
+    font-family: 'Playfair Display', serif, sans-serif;
+    color: #0B5A18; /* Verde POETRA */
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+/* Texto descriptivo cómodo de leer */
+.mv-card p {
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.65;
+}

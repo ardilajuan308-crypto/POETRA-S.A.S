@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POETRA S.A.S</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spirax&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        poetraGreen: '#0B5A18',
+                        poetraGreenDark: '#073d10',
+                        poetraGreenLight: '#128024',
+                        poetraOrange: '#F47A13',
+                        poetraOrangeDark: '#c7600e',
+                        poetraOrangeLight: '#f79a4d',
+                        poetraCream: '#F9F8F3',
+                        poetraEarth: '#EBE6DC',
+                        poetraText: '#2D312E'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Enlace a tu archivo CSS externo -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body class="bg-poetraCream text-poetraText antialiased selection:bg-poetraOrange selection:text-white">
+
+<!-- Header & Navbar Flotante POETRA -->
+<header class="sticky top-0 inset-x-0 z-50 w-full pt-4 pb-2 px-4 sm:px-8 flex justify-center bg-[#0B5A18]" id="navbar">
+    <nav class="w-full max-w-7xl bg-[#0B5A18] border border-white/20 rounded-full px-6 sm:px-10 py-3 flex items-center justify-between transition-all duration-300">
+        
+        <!-- Logo + Fuente Spirax -->
+        <a href="#inicio" class="flex items-center gap-3.5 group">
+            <img src="imagenes/logo_poetra_-removebg-preview.png" 
+                 alt="Logo POETRA" 
+                 class="h-11 sm:h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md">
+            
+            <span class="text-2xl sm:text-3xl text-white group-hover:text-poetraOrange transition-colors duration-300 tracking-wider" 
+                  style="font-family: 'Spirax', system-ui; font-weight: 400;">
+                POETRA
+            </span>
+        </a>
+
+        <!-- Enlaces de Navegación -->
+        <div class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium">
+            <a href="#inicio" class="poetra-nav-link px-4 py-2 rounded-full text-poetraCream/90 hover:text-white hover:bg-white/15 transition-all">
+                Inicio
+            </a>
+            <a href="#quienes-somos" class="poetra-nav-link px-4 py-2 rounded-full text-poetraCream/90 hover:text-white hover:bg-white/15 transition-all">
+                Quiénes somos
+            </a>
+            <a href="#sostenibilidad" class="poetra-nav-link px-4 py-2 rounded-full text-poetraCream/90 hover:text-white hover:bg-white/15 transition-all">
+                Materiales y sostenibilidad
+            </a>
+            <a href="#catalogo" class="poetra-nav-link px-4 py-2 rounded-full text-poetraCream/90 hover:text-white hover:bg-white/15 transition-all">
+                Productos
+            </a>
+            <a href="#contacto" class="poetra-nav-link px-4 py-2 rounded-full text-poetraCream/90 hover:text-white hover:bg-white/15 transition-all">
+                Contacto
+            </a>
+        </div>
+
+        <!-- Carrito de Compras -->
+        <div class="flex items-center">
+            <button id="cart-btn" onclick="toggleCart()" class="cart-btn-animated relative bg-poetraOrange text-white w-11 h-11 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer" aria-label="Carrito de compras">
+                <i class="fa-solid fa-cart-shopping text-base"></i>
+                <span id="cart-count" class="cart-badge-animated absolute -top-1 -right-1 bg-white text-[#0B5A18] font-bold text-[11px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#0B5A18] shadow-md">
+                    0
+                </span>
+            </button>
+        </div>
+
+    </nav>
+</header>
+
+<!-- SECCIÓN HERO (#inicio) -->
+<section id="inicio" class="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0B5A18]">
+    
+    <!-- Imagen de Fondo -->
+    <div class="absolute inset-0 z-0">
+        <img src="imagenes/flor1.jpeg" alt="Fondo de Flores POETRA" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0B5A18]/75 via-[#0B5A18]/55 to-[#0B5A18]/40"></div>
+    </div>
+
+    <!-- Luces de brillo orgánico -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+    <div class="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-poetraOrange/15 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center z-10 w-full relative">
+        <div class="lg:col-span-12 space-y-8 text-left hero-animate">
+            
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/20 backdrop-blur-md border border-white/20 text-poetraOrangeLight text-xs font-semibold uppercase tracking-wider shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-poetraOrange animate-ping"></span>
+                <span>Diseño Ecológico & Biomateriales</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold leading-[1.1] text-white drop-shadow-md">
+                Una Forma Distinta de <br>Habitar
+            </h1>
+
+            <p class="text-base sm:text-lg text-white/95 max-w-xl font-light leading-relaxed drop-shadow-sm">
+               Transformamos la planta invasora Ojo de Poeta en biomateriales de alta innovación y mobiliario escultórico de autor. Descubre el arte sostenible, el valor de la economía circular y dale una nueva vida a tus espacios sin usar madera tradicional.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                <a href="#catalogo"
+                    class="bg-poetraOrange hover:bg-poetraOrangeDark border border-white/10 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl hover:shadow-poetraOrange/40 transition-all duration-300 flex items-center justify-center gap-3 group text-sm cursor-pointer">
+                    <i class="fa-solid fa-store group-hover:scale-110 transition-transform"></i>
+                    <span>Ver Colección</span>
+                </a>
+                <a href="#sostenibilidad"
+                    class="bg-black/20 hover:bg-black/30 backdrop-blur-md text-white border border-white/25 font-semibold px-8 py-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 text-sm shadow-md cursor-pointer">
+                    <span>Nuestros Materiales</span>
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+
+           <!-- Bloque inferior de la sección INICIO -->
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/20 max-w-lg animate-float">
+    <div>
+        <span class="block text-2xl sm:text-3xl font-serif font-bold text-white drop-shadow-md shimmer-text-white">0%</span>
+        <span class="text-[11px] text-poetraEarth/90 font-medium">Madera Talada <em class="block text-[10px] text-poetraOrangeLight font-normal">(Garantiza la protección de los bosques)</em></span>
+    </div>
+    <div>
+        <span class="block text-2xl sm:text-3xl font-serif font-bold text-poetraOrangeLight drop-shadow-md shimmer-text">100%</span>
+        <span class="text-[11px] text-poetraEarth/90 font-medium">Biocompuesto <em class="block text-[10px] text-poetraEarth/70 font-normal">Fibra de planta invasora</em></span>
+    </div>
+    <div>
+        <span class="block text-2xl sm:text-3xl font-serif font-bold text-white drop-shadow-md shimmer-text-white">Hecho en Colombia</span>
+        <span class="text-[11px] text-poetraEarth/90 font-medium">Origen Sostenible</span>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+  
+<!-- Quiénes Somos Section -->
+<section id="quienes-somos" class="pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-[#EBE5D8] relative overflow-hidden">
+    <div class="absolute top-10 right-10 w-96 h-96 bg-poetraGreendark/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-96 h-96 bg-poetraGreendark/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 space-y-12">
+        
+        <!-- Bloque Principal: Manifiesto y Foto -->
+        <div class="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-12 shadow-2xl border border-poetraGreen/10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Columna Izquierda: Textos y Estadísticas -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 text-poetraOrange font-bold tracking-widest text-xs uppercase bg-poetraOrange/10 px-4 py-2 rounded-full border border-poetraOrange/20 shadow-sm">
+                    <i class="fa-solid fa-leaf"></i> Nuestra Esencia Sostenible
+                </div>
+                
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-poetraGreen leading-tight">
+                    Diseño vivo que respeta,<br>
+                    <span class="text-poetraOrange">honra y transforma</span> la tierra
+                </h2>
+                
+                <p class="text-poetraText/85 leading-relaxed text-base sm:text-lg">
+                    En <strong class="text-poetraGreen font-semibold">POETRA S.A.S</strong> unimos la innovación ecológica, la biotecnología aplicada y el diseño de autor. Nacemos con el propósito de crear mobiliario escultórico y objetos funcionales de alta gama <span class="bg-poetraOrange/15 px-2 py-0.5 rounded text-poetraGreen font-semibold">sin talar un solo árbol,</span> convirtiendo la amenaza ambiental de la planta invasora <span class="bg-poetraOrange/15 px-2 py-0.5 rounded text-poetraGreen font-semibold">Ojo de Poeta (Thunbergia alata)</span> en biomateriales de alto valor estético y durabilidad.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="p-4 rounded-2xl bg-[#042309] text-white shadow-md flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-poetraOrange text-white flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase text-poetraOrangeLight">Bio-Innovación</span>
+                            <span class="text-xs text-poetraEarth/90">Biomateriales 100% Vegetales</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-poetraGreen text-white shadow-md flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-white text-poetraGreen flex items-center justify-center text-lg shrink-0 font-bold">
+                            0%
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase text-poetraOrangeLight">Madera Talada</span>
+                            <span class="text-xs text-poetraEarth/90">Mobiliario de Economía Circular</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Imagen de Taller -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-poetraOrange/30 aspect-[4/5] transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <img src="imagenes/productos/Producto 4.jpeg" alt="Taller POETRA" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#042309]/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <span class="text-xs font-bold uppercase tracking-widest text-poetraOrangeLight">ARTESANÍA VIVA & DISEÑO DE AUTOR</span>
+                        <p class="font-serif text-lg font-bold">Hecho a mano en Colombia</p>
+                    </div>
+                </div>
+                <div class="absolute -bottom-4 -left-4 w-full h-full bg-poetraGreen rounded-3xl -z-0"></div>
+            </div>
+
+        </div>
+
+        <!-- Misión y Visión con Diseño Vivo y Sofisticado -->
+        <div class="mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            
+            <!-- Tarjeta Misión -->
+            <div class="group relative bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 sm:p-10 border border-poetraGreen/15 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-1">
+                <!-- Acento superior orgánico -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-poetraOrange/20 to-transparent rounded-bl-full pointer-events-none transition-transform duration-500 group-hover:scale-125"></div>
+                
+                <div class="relative z-10 space-y-5">
+                    <div class="inline-flex items-center gap-3">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-poetraOrange to-[#D95B00] text-white flex items-center justify-center text-2xl shadow-lg shadow-poetraOrange/30 group-hover:rotate-6 transition-transform duration-300">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-poetraOrange px-3 py-1 bg-poetraOrange/10 rounded-full">Propósito 01</span>
+                    </div>
+
+                    <h3 class="font-serif text-3xl font-bold text-poetraGreen tracking-tight">
+                        Misión
+                    </h3>
+
+                    <p class="text-poetraText/90 leading-relaxed text-base sm:text-lg font-light">
+                        Transformar especies vegetales invasoras en <span class="font-medium text-poetraGreen">objetos de diseño y mobiliario escultórico de autor</span>. A través de procesos sostenibles de economía circular con enfoque regenerativo, convertimos una problemática ambiental en arte funcional, proponiendo una forma distinta de habitar los espacios a partir de la reinterpretación de lo cotidiano.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tarjeta Visión -->
+            <div class="group relative bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 sm:p-10 border border-poetraGreen/15 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-1">
+                <!-- Acento superior orgánico -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-poetraGreen/20 to-transparent rounded-bl-full pointer-events-none transition-transform duration-500 group-hover:scale-125"></div>
+                
+                <div class="relative z-10 space-y-5">
+                    <div class="inline-flex items-center gap-3">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-poetraGreen to-[#042309] text-white flex items-center justify-center text-2xl shadow-lg shadow-poetraGreen/30 group-hover:-rotate-6 transition-transform duration-300">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-poetraGreen px-3 py-1 bg-poetraGreen/10 rounded-full">Horizonte 02</span>
+                    </div>
+
+                    <h3 class="font-serif text-3xl font-bold text-poetraGreen tracking-tight">
+                        Visión
+                    </h3>
+
+                    <p class="text-poetraText/90 leading-relaxed text-base sm:text-lg font-light">
+                        Consolidarnos como la marca referente en <span class="font-medium text-poetraOrange">Sabana Centro</span> por su propuesta de diseño con enfoque regenerativo, destacándonos en el mercado por transformar especies invasoras en objetos de autor que promueven una forma distinta de habitar y redefinen la relación entre estética, funcionalidad y sostenibilidad.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Sostenibilidad y Materiales Section -->
+<section id="sostenibilidad" class="bg-[#0B5A18] py-28 px-4 sm:px-6 lg:px-8 text-white relative overflow-hidden border-y border-white/10">
+    <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-poetraGreenLight/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-poetraOrange/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto space-y-16 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <div class="inline-flex items-center gap-2 text-poetraGreenDark font-bold text-xs uppercase tracking-widest bg-white/10 border border-white/20 px-4 py-2 rounded-full shadow-lg backdrop-blur-md">
+                <i class="fa-solid fa-atom text-poetraOrange"></i> Biotecnología Artesanal
+            </div>
+            
+            <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white tracking-wide">
+                Nuestra Materia Prima Viva
+            </h2>
+            
+            <p class="text-poetraEarth/90 text-sm sm:text-base font-light leading-relaxed">
+                Transformamos especies invasoras y biopolímeros naturales en estructuras y superficies de alta resistencia, protegiendo los bosques primarios y cerrando el ciclo de la economía circular.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="bg-poetraGreenDark/70 backdrop-blur-md rounded-3xl p-8 border border-white/20 flex flex-col justify-between hover:border-poetraOrange transition-all duration-500 shadow-2xl group hover:-translate-y-2 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-28 h-28 bg-poetraGreenLight/30 rounded-full blur-2xl group-hover:bg-poetraOrange/20 transition-all"></div>
+                <div class="space-y-6 relative z-10">
+                    <div class="flex items-center justify-between">
+                        <div class="w-16 h-16 overflow-hidden rounded-2xl border-2 border-poetraOrangeLight/50 shadow-lg group-hover:scale-105 transition-transform duration-300">
+                            <img src="imagenes/guadua icono.jpeg" alt="Guadua Estructural" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-poetraGreenLight/40 text-poetraOrangeLight px-3 py-1 rounded-full border border-poetraGreenLight/50">
+                            100% Renovable
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-white group-hover:text-poetraOrangeLight transition-colors">
+                            Guadua Estructural
+                        </h3>
+                        <p class="text-poetraEarth/85 text-sm leading-relaxed mt-2 font-light">
+                            Especie leñosa de alta flexibilidad mecánica y rápido crecimiento. Constituye el bastidor y el soporte interno de nuestro mobiliario de autor.
+                        </p>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-white/10 flex items-center justify-between text-xs text-poetraEarth/80 font-medium relative z-10">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-poetraOrange"></i> Alta Carga</span>
+                    <span class="text-poetraOrangeLight">Origen: Cundinamarca</span>
+                </div>
+            </div>
+
+            <div class="bg-poetraGreenDark/70 backdrop-blur-md rounded-3xl p-8 border border-white/20 flex flex-col justify-between hover:border-poetraOrange transition-all duration-500 shadow-2xl group hover:-translate-y-2 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-28 h-28 bg-poetraOrange/20 rounded-full blur-2xl group-hover:bg-poetraGreenLight/30 transition-all"></div>
+                <div class="space-y-6 relative z-10">
+                    <div class="flex items-center justify-between">
+                        <div class="w-16 h-16 overflow-hidden rounded-2xl border-2 border-poetraOrangeLight/50 shadow-lg group-hover:scale-105 transition-transform duration-300">
+                            <img src="imagenes/icono.jpeg" alt="Flor Ojo de Poeta" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-poetraOrange/40 text-poetraOrangeLight px-3 py-1 rounded-full border border-poetraOrange/50">
+                            Limpia Ecosistemas
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-white group-hover:text-poetraOrangeLight transition-colors">
+                            Fibra Ojo de Poeta
+                        </h3>
+                        <p class="text-poetraEarth/85 text-sm leading-relaxed mt-2 font-light">
+                            Recolectamos artesanalmente los tallos leñosos de <em>Thunbergia alata</em> (especie invasora en Colombia) para crear la fibra de refuerzo de nuestros biocompuestos.
+                        </p>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-white/10 flex items-center justify-between text-xs text-poetraEarth/80 font-medium relative z-10">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-seedling text-poetraOrange"></i> Eco-Biocompuesto</span>
+                    <span class="text-poetraOrangeLight">Impacto Circular</span>
+                </div>
+            </div>
+
+            <div class="bg-poetraGreenDark/70 backdrop-blur-md rounded-3xl p-8 border border-white/20 flex flex-col justify-between hover:border-poetraOrange transition-all duration-500 shadow-2xl group hover:-translate-y-2 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-28 h-28 bg-poetraGreenLight/30 rounded-full blur-2xl group-hover:bg-poetraOrange/20 transition-all"></div>
+                <div class="space-y-6 relative z-10">
+                    <div class="flex items-center justify-between">
+                        <div class="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-poetraGreen text-2xl group-hover:scale-105 transition-transform duration-300">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white px-3 py-1 rounded-full border border-white/30">
+                            0% Tóxicos
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-white group-hover:text-poetraOrangeLight transition-colors">
+                            Bio-Resinas y Almidón
+                        </h3>
+                        <p class="text-poetraEarth/85 text-sm leading-relaxed mt-2 font-light">
+                            Formulamos matrices aglutinantes 100% orgánicas a base de almidón de yuca, glicerina vegetal y cal mineral para lograr una corteza rígida e impermeable.
+                        </p>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-white/10 flex items-center justify-between text-xs text-poetraEarth/80 font-medium relative z-10">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-flask text-poetraOrange"></i> Base Yuca & Cal</span>
+                    <span class="text-poetraOrangeLight">Bio-Polímero</span>
+                </div>
+            </div>
+
+        </div>
+
+       <!-- Barra Inferior de Métricas con Texto Animado (Shimmer) -->
+<div class="bg-poetraGreenDark/80 backdrop-blur-md rounded-2xl p-6 border border-white/20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center shadow-xl">
+    <div>
+        <!-- Solo el texto se anima con el destello -->
+        <span class="block text-2xl sm:text-3xl font-serif font-bold shimmer-text">100%</span>
+        <span class="text-xs text-poetraEarth/80 font-medium">Libre de Plásticos</span>
+    </div>
+    <div>
+        <span class="block text-2xl sm:text-3xl font-serif font-bold shimmer-text-white">0%</span>
+        <span class="text-xs text-poetraEarth/80 font-medium">Deforestación</span>
+    </div>
+    <div>
+        <span class="block text-2xl sm:text-3xl font-serif font-bold shimmer-text">Local</span>
+        <span class="text-xs text-poetraEarth/80 font-medium">Bio-Recolección Responsable</span>
+    </div>
+    <div>
+        <span class="block text-2xl sm:text-3xl font-serif font-bold shimmer-text-white">Biodegradable</span>
+        <span class="text-xs text-poetraEarth/80 font-medium">Retorno Seguro a la Tierra</span>
+    </div>
+</div>
+    </div>
+</section>
+
+<!-- SECCIÓN DE PRODUCTOS (GRILLA LIMPIA DE 3 COLUMNAS) -->
+<section id="catalogo" class="py-24 px-4 sm:px-6 lg:px-8 bg-[#F9F8F3] relative overflow-hidden">
+    <div class="absolute top-1/2 left-0 w-96 h-96 bg-[#0B5A18]/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#F47A13]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        
+        <div class="text-center space-y-3 mb-8">
+            <span class="inline-flex items-center gap-2 text-[#F47A13] font-bold text-xs uppercase tracking-widest bg-[#F47A13]/10 border border-[#F47A13]/20 px-4 py-1.5 rounded-full shadow-sm">
+                <i class="fa-solid fa-couch"></i> Colección de Autor
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-serif font-bold text-[#0B5A18]">
+                Nuestras Piezas Escultóricas
+            </h2>
+            <p class="text-poetraText/75 max-w-xl mx-auto text-sm sm:text-base leading-relaxed font-light">
+                Diseño sostenible elaborado a mano en Chía con biocompuesto de <em>Thunbergia alata</em> y estructura de guadua.
+            </p>
+        </div>
+
+        <div class="flex justify-center mb-12">
+            <span class="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest bg-[#0B5A18] text-white shadow-md">
+                Todos los Productos
+            </span>
+        </div>
+
+        <!-- GRILLA DE 3 COLUMNAS -->
+        <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+            <!-- Renderizado dinámico desde script.js -->
+        </div>
+
+    </div>
+</section>
+
+<!-- SECCIÓN DE CONTACTO (#contacto) -->
+<section id="contacto" class="py-24 px-4 sm:px-6 lg:px-8 bg-[#F9F8F3] relative overflow-hidden border-t border-poetraEarth/40">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-[#0B5A18]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-[#F47A13]/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+        
+        <div class="text-center space-y-3 mb-14">
+            <span class="inline-flex items-center gap-2 text-[#F47A13] font-bold text-xs uppercase tracking-widest bg-[#F47A13]/10 border border-[#F47A13]/20 px-4 py-1.5 rounded-full shadow-sm">
+                <i class="fa-solid fa-paper-plane"></i> Hablemos de Tu Proyecto
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-serif font-bold text-[#0B5A18]">
+                ¿Tienes una idea o proyecto en mente?
+            </h2>
+            <p class="text-poetraText/75 max-w-xl mx-auto text-sm sm:text-base leading-relaxed font-light">
+                Diseñamos piezas únicas a la medida con nuestros biomateriales de Ojo de Poeta. Escríbenos y hagamos realidad tu espacio sostenible.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-2xl border border-[#0B5A18]/10 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+            
+            <div class="lg:col-span-5 bg-[#0B5A18] text-white p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute -bottom-16 -right-16 w-60 h-60 bg-[#128024]/40 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <div class="space-y-6 relative z-10">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-[#f79a4d]">Diseño de Autor</span>
+                        <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1">Conéctate con POETRA</h3>
+                        <p class="text-poetraEarth/80 text-xs sm:text-sm mt-2 leading-relaxed font-light">
+                            Ofrecemos asesoría integral para adaptar nuestras piezas escultóricas y biocompuestos a tus espacios residenciales o comerciales.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="p-4 rounded-2xl bg-white/10 border border-white/15 flex items-start gap-3.5 shadow-sm">
+                            <div class="w-10 h-10 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center text-white text-lg shrink-0">
+                                <i class="fa-solid fa-compass-drafting text-[#f79a4d]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white uppercase tracking-wider">Atención Personalizada</h4>
+                                <p class="text-xs text-poetraEarth/80 font-light mt-1 leading-relaxed">
+                                    Te asesoramos en la conceptualización, escala y acabados de tus piezas a la medida.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white/10 border border-white/15 flex items-start gap-3.5 shadow-sm">
+                            <div class="w-10 h-10 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center text-white text-lg shrink-0">
+                                <i class="fa-solid fa-leaf text-[#f79a4d]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white uppercase tracking-wider">Biomateriales Certificados</h4>
+                                <p class="text-xs text-poetraEarth/80 font-light mt-1 leading-relaxed">
+                                    Piezas elaboradas con corteza rígida de biocompuesto impermeabilizado de alta durabilidad.
+                                </p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/573229098734?text=Hola%20equipo%20POETRA,%20me%20gustaría%20recibir%20asesoría%20para%20un%20proyecto." target="_blank" 
+                           class="p-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/15 hover:border-white/40 transition-all duration-300 flex items-center justify-between group shadow-sm">
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center text-[#25D366] text-xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs font-bold text-white group-hover:text-[#f79a4d] transition-colors">¿Respuesta inmediata?</span>
+                                    <span class="text-[11px] text-poetraEarth/70">Habla con un diseñador por WhatsApp</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-xs text-poetraEarth/60 group-hover:text-white group-hover:translate-x-1 transition-all"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-white/15 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-poetraEarth/70 relative z-10 mt-8 gap-2">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-[#f79a4d]"></i> Chía, Cundinamarca</span>
+                    <span>admpoetra4@gmail.com</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 p-8 sm:p-12 bg-white">
+                <form action="https://formspree.io/f/mzeddbkv" method="POST" class="space-y-6">
+                    
+                    <div class="space-y-1.5 relative">
+                        <label class="block text-xs font-bold text-[#0B5A18] uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-list-check text-[#F47A13]"></i> Motivo de tu Consulta
+                        </label>
+                        <div class="relative">
+                            <select name="motivo_consulta" required 
+                                class="w-full px-4 py-3.5 bg-poetraEarth/20 border border-poetraEarth/80 rounded-2xl text-sm text-poetraText focus:bg-white focus:border-[#F47A13] focus:ring-4 focus:ring-[#F47A13]/20 transition-all outline-none appearance-none cursor-pointer">
+                                <option value="" disabled selected>Selecciona el tipo de servicio o proyecto...</option>
+                                <option value="Cotizar Mobiliario de Autor">🛋️ Cotizar Mobiliario de Autor (Colección)</option>
+                                <option value="Proyecto de Interiorismo o Espacio Comercial">🏛️ Proyecto de Interiorismo o Espacio Comercial</option>
+                                <option value="Piezas de Decoracion">🌿 Piezas de Decoración Ecológica</option>
+                                <option value="Asesoria en Biomateriales y Muestras">🔬 Asesoría en Biomateriales / Muestras</option>
+                                <option value="Otra Consulta">💬 Otra consulta general</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#0B5A18]">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="space-y-1.5 relative">
+                            <label class="block text-xs font-bold text-[#0B5A18] uppercase tracking-wider flex items-center gap-1.5">
+                                <i class="fa-solid fa-user text-[#F47A13]"></i> Tu Nombre
+                            </label>
+                            <input type="text" name="nombre" required placeholder="Ej. Sofía Bareño" 
+                                class="w-full px-4 py-3.5 bg-poetraEarth/20 border border-poetraEarth/80 rounded-2xl text-sm text-poetraText focus:bg-white focus:border-[#F47A13] focus:ring-4 focus:ring-[#F47A13]/20 transition-all outline-none">
+                        </div>
+                        <div class="space-y-1.5 relative">
+                            <label class="block text-xs font-bold text-[#0B5A18] uppercase tracking-wider flex items-center gap-1.5">
+                                <i class="fa-solid fa-at text-[#F47A13]"></i> Correo Electrónico
+                            </label>
+                            <input type="email" name="email" required placeholder="tu.email@ejemplo.com" 
+                                class="w-full px-4 py-3.5 bg-poetraEarth/20 border border-poetraEarth/80 rounded-2xl text-sm text-poetraText focus:bg-white focus:border-[#F47A13] focus:ring-4 focus:ring-[#F47A13]/20 transition-all outline-none">
+                        </div>
+                    </div>
+
+                    <div class="space-y-1.5 relative">
+                        <label class="block text-xs font-bold text-[#0B5A18] uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-phone text-[#F47A13]"></i> Teléfono / WhatsApp
+                        </label>
+                        <input type="tel" name="telefono" placeholder="Ej. 310 000 0000" 
+                            class="w-full px-4 py-3.5 bg-poetraEarth/20 border border-poetraEarth/80 rounded-2xl text-sm text-poetraText focus:bg-white focus:border-[#F47A13] focus:ring-4 focus:ring-[#F47A13]/20 transition-all outline-none">
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <label class="block text-xs font-bold text-[#0B5A18] uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-comment-dots text-[#F47A13]"></i> Cuéntanos los detalles
+                        </label>
+                        <textarea name="mensaje" rows="4" required placeholder="Escribe las dimensiones, espacio o idea que tienes en mente..." 
+                            class="w-full px-4 py-3.5 bg-poetraEarth/20 border border-poetraEarth/80 rounded-2xl text-sm text-poetraText focus:bg-white focus:border-[#F47A13] focus:ring-4 focus:ring-[#F47A13]/20 transition-all outline-none resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-[#F47A13] hover:bg-[#0B5A18] text-white font-bold py-4 px-8 rounded-2xl shadow-xl hover:shadow-[#0B5A18]/30 transition-all duration-300 flex items-center justify-center gap-3 text-sm tracking-wider uppercase group cursor-pointer">
+                        <span>Enviar Cotización a POETRA</span>
+                        <i class="fa-solid fa-arrow-right text-base group-hover:translate-x-2 transition-transform"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer Principal Corporativo -->
+<footer class="bg-[#0B5A18] text-white pt-16 pb-8 border-t border-white/10 relative overflow-hidden">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-poetraGreenLight/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-poetraOrange/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/15">
+            
+            <div class="lg:col-span-4 space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="font-serif text-3xl font-bold tracking-wider text-white">POETRA</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest bg-poetraOrange text-white px-2.5 py-0.5 rounded-full">S.A.S.</span>
+                </div>
+                <p class="text-poetraEarth/85 text-xs sm:text-sm font-light leading-relaxed pr-4">
+                    Transformamos la planta invasora <em>Ojo de Poeta</em> (<em>Thunbergia alata</em>) en biocompuestos de alta innovación y mobiliario escultórico de autor. Un diseño que respeta y honra la tierra.
+                </p>
+                <div class="flex items-center gap-3 pt-2">
+                    <a href="https://www.instagram.com/poetra.eco" target="_blank" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-poetraOrange border border-white/20 flex items-center justify-center text-white text-sm transition-all duration-300"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@poetra2952" target="_blank" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-poetraOrange border border-white/20 flex items-center justify-center text-white text-sm transition-all duration-300"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/share/1Cdj7ELCcC/" target="_blank" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-poetraOrange border border-white/20 flex items-center justify-center text-white text-sm transition-all duration-300"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 space-y-4">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-poetraOrangeLight border-b border-white/10 pb-2 inline-block">Explora</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-poetraEarth/80 font-light">
+                    <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                    <li><a href="#quienes-somos" class="hover:text-white transition-colors">Quiénes somos</a></li>
+                    <li><a href="#sostenibilidad" class="hover:text-white transition-colors">Materiales y sostenibilidad</a></li>
+                    <li><a href="#catalogo" class="hover:text-white transition-colors">Colecciones</a></li>
+                    <li><a href="#contacto" class="hover:text-white transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-3 space-y-4">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-poetraOrangeLight border-b border-white/10 pb-2 inline-block">Sostenibilidad y Legales</h4>
+                <ul class="space-y-2.5 text-xs text-poetraEarth/80 font-light">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-leaf text-poetraOrange text-[10px]"></i> Control de <em>Thunbergia alata</em></li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-recycle text-poetraOrange text-[10px]"></i> Economía circular y triple impacto</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-shield-cat text-poetraOrange text-[10px]"></i> Política de datos (Habeas Data)</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-file-contract text-poetraOrange text-[10px]"></i> Términos y condiciones</li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-3 space-y-4">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-poetraOrangeLight border-b border-white/10 pb-2 inline-block">Ubicación y Taller</h4>
+                <ul class="space-y-3 text-xs text-poetraEarth/85 font-light">
+                    <li class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-location-dot text-poetraOrange mt-0.5"></i>
+                        <span>Chía, Cundinamarca, Colombia</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-envelope text-poetraOrange"></i>
+                        <a href="mailto:admpoetra4@gmail.com" class="hover:text-white transition-colors">admpoetra4@gmail.com</a>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-phone text-poetraOrange"></i>
+                        <span>+57 322 909 8734</span>
+                    </li>
+                    <li class="flex items-center gap-2.5 text-[11px] text-poetraEarth/60 pt-1">
+                        <i class="fa-regular fa-clock text-poetraOrange"></i>
+                        <span>Lun - Vie: 8:00 a.m. - 5:00 p.m.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-poetraEarth/70 font-light gap-3 text-center sm:text-left">
+            <p>© 2026 POETRA S.A.S. Todos los derechos reservados.</p>
+            <p class="flex items-center gap-1">
+                Diseñado con biomateriales en Cundinamarca, Colombia <i class="fa-solid fa-heart text-poetraOrange text-[10px]"></i>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Modales y Toast -->
+<div id="cart-modal" class="fixed inset-0 z-50 overflow-hidden hidden">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+        <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+            <div class="p-6 bg-[#0B5A18] text-white flex items-center justify-between">
+                <h3 class="font-serif font-bold text-lg">Tu Carrito POETRA</h3>
+                <button onclick="toggleCart()" class="text-white hover:text-poetraOrange transition-colors"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-poetraEarth"></div>
+            <div class="p-6 bg-poetraCream border-t border-poetraEarth space-y-4">
+                <div class="flex justify-between items-center text-lg font-bold text-[#0B5A18]">
+                    <span>Total estimado:</span>
+                    <span id="cart-total">$0 COP</span>
+                </div>
+                <button onclick="checkoutWhatsApp()" class="w-full bg-[#0B5A18] hover:bg-[#073d10] text-white font-semibold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2.5 text-sm tracking-wide group cursor-pointer">
+                    <i class="fa-brands fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+                    <span>Finalizar Pedido por WhatsApp</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="detail-modal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm" onclick="closeDetailModal()"></div>
+    <div class="relative bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl z-10 space-y-6">
+        <button onclick="closeDetailModal()" class="absolute top-4 right-4 w-10 h-10 bg-poetraEarth rounded-full flex items-center justify-center text-poetraGreen"><i class="fa-solid fa-xmark"></i></button>
+        <div id="detail-content" class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center"></div>
+    </div>
+</div>
+
+<div id="toast-message" class="fixed bottom-6 right-6 z-50 bg-poetraGreen text-white px-6 py-3 rounded-2xl shadow-xl flex items-center gap-3 transform translate-y-32 opacity-0 transition-all duration-300">
+    <i class="fa-solid fa-circle-check text-poetraOrangeLight text-lg"></i>
+    <span id="toast-text" class="text-sm font-medium">Producto agregado al carrito</span>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.poetra-nav-link');
+        const activeClasses = ['bg-white/10', 'text-poetraOrangeLight', 'font-semibold', 'border', 'border-white/15'];
+
+        function updateActiveLink() {
+            let scrollPosition = window.scrollY + 200;
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+                if (scrollPosition >= top && scrollPosition < top + height) {
+                    navLinks.forEach(link => {
+                        link.classList.remove(...activeClasses);
+                        link.classList.add('text-poetraCream/80');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add(...activeClasses);
+                            link.classList.remove('text-poetraCream/80');
+                        }
+                    });
+                }
+            });
+        }
+        window.addEventListener('scroll', updateActiveLink);
+        updateActiveLink();
+    });
+
+    
+</script>
+<!-- Contenido final de tus scripts -->
+    <script src="script.js"></script>
+
+  <!-- Cursor personalizado con la flor real Ojo de Poeta -->
+<div id="custom-cursor-dot" class="custom-cursor-dot">
+    <img src="imagenes/Flor naranja con gotas de rocío.png" alt="Ojo de Poeta" class="cursor-flower-img">
+</div>
+<div id="custom-cursor-ring" class="custom-cursor-ring"></div>
+
+
+</body>
+</html>
+</body>
+</html>
